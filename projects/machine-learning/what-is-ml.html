@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <a href=""> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+    <hr>
+    <section class="constrain" id="intro">
+        <div class="about-text">
+            <h2>What is Machine Learning?</h2>
+            <p>Machine Learning?  What is it?   Simply put, Machine Learning gives computers the ability to "learn" from data without being explicitly programmed for every possible scenario.  
+            </p>
+            <p>Let's say you are writing javascript code (or any other language) to create a function.   You give the function a set of inputs and you expect an output.   To get the output from that input you must explicitly program it for every scenario.  With Machine Learning, you are basically creating a function or model given a learning dataset to learn patterns and relationships within that data.
+            </p>
+            <p>Let's say you are writing javascript code (or any other language) to create a function.   You give the function a set of inputs and you expect an output.   To get the output from that input you must explicitly program it for every scenario.  With Machine Learning, you are basically creating a function or model given a learning dataset to learn patterns and relationships within that data.</p>
+            </p>
+            <h3>What you are given:</h3>
+            <ul>
+                  <li><strong>Data</strong> numbers, text, images, audio, etc.</li>
+                  <li><strong>A Task</strong> what are you trying to achieve?  Classify a problem, predict a price, etc</li>
+                  <li><strong>Performance Measure</strong> simply a way to evaluate how well you are doing with your predictions (accuracy, error rate, etc).</li>
+            </ul>
+            <h3>How Machine Learning Works:</h3>
+            <ul>
+                  <li><strong>Data Collection & Preprocessing:</strong> Gathering relevant data and cleaning it to be suitable for the algorithm (e.g., removing errors, handling missing values, formatting).</li>
+                  <li><strong>Model Selection:</strong> Choosing an appropriate algorithm (the "learning model") for the task. There are many types, each suited for different problems.</li>
+                  <li><strong>Training the Model:</strong> The algorithm "learns" from the prepared data. During training, the model iteratively adjusts its internal parameters (often called "weights" or "coefficients") to find patterns and relationships that minimize errors in its predictions.</li>
+                  <li><strong>Evaluation:</strong> After training, the model is tested on new, unseen data to assess how well it generalizes and makes accurate predictions. </li>
+                  <li><strong>Prediction/Inference:</strong> Once the model is trained and validated, it can be used to make predictions or decisions on real-world, new data.</li>
+            </ul>
+            <h3>Main Types Of Machine Learning:</h3>
+            <ul>
+              <li><strong>Supervised Learning:</strong>Models are trained on a labeled dataset.  The goal is to learn a mapping from the input to the outputs that can accurately predict outputs for new, unseen data.  There are two main types of Superfised Learning:</li>
+                <ul>
+                  <li><strong>Classification:</strong>Predicting a categorical label such as Spam/No Spam, Cat/Dog</li>
+                  <li><strong>Regression:</strong>Predicting a numerical value such as price of a house or what will tomorrows temperature be</li>
+                </ul>
+              <li><strong>Unsupervised Learning</strong>Models are trained on unlabled data, so there are no "correct" answers.  Algorithm must find hidden patters within the data such as a student exploring new topics without a teacher.  The toal is to discover underlying structures, group similar data points or reduce data complexity.</li>
+              <li><strong>Reinforcement Learning:</strong>An "agent" learns by interacting with an environment. It receives feedback in the form of rewards or penalties for its actions. The goal is to learn a policy (a strategy) that maximizes the cumulative reward over time through trial and error.</li>
+
+            </ul>
+            <h3>Why is Machine Learning Important?</h3>
+            <ul>
+              <li><strong>Automation:</strong> Automating complex tests that are difficult and time consuming for humans.</li>
+              <li><strong>Insights from Big Data: </strong>Discovering patterns and insights from huge amounts of data.</li>
+              <li><strong>Personalization:</strong>Powering recommendation systems (Netfix, Amazon, etc)</li>
+              <li><strong>Prediction:</strong>Forecasting trends, detecting span, detecting fraud, predicting outcomes.</li>
+              <li><strong>Efficiency</strong>Optimizing processes in various industries./li>
+            </ul>
+            <p>Machine learning is all about building intelligent systems that can adapt and learn over time as data changes.   It is an incredible tool for solving complex problems.</p>
+            </div>
+    </section>
+
+
+
+    <hr> <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <script src='assets/js/global.js'></script>
+  </body>
+</html>
