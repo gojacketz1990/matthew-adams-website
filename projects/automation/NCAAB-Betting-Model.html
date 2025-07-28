@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Adams | Python NCAAB Betting Model</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <a href=""> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </header>
+    <hr>
+<section class="constrain" id="project-detail-content">
+        <article class="project-case-study">
+            <header class="project-header">
+                <h1>Python NCAAB Betting Model</h1>
+                <p class="project-summary-meta">
+                    **Category:** Web Automation Framework | **Tools Used:** Selenium WebDriver, Python, GitHub, Pandas, Web Scraping, Data Science | **Duration:** 2 Months
+                </p>
+                </header>
+
+            <div class="project-body">
+                <h2>Project Overview</h2>
+                <p>This project involved designing and implementing a robust and scalable test automation framework using Selenium WebDriver with Python. The primary goal was to create a maintainable and reusable suite for an e-commerce platform's critical user journeys, centered around the Page Object Model (POM) design pattern to separate test logic from UI locators.</p>
+                <h2>Process </h2>
+                <ol>
+                  <li>Define the problem - predict outcomes of NCAA Men's Basketball Games</li>
+                  <li>Identify Data that will be needed</li>
+                  <li>Evaluate the Data</li>
+                  <li>Determine pertinent features</li>
+                  <li>Create a model</li>
+                  <li>Experiment and Test the model</li>
+                  <li>Implement the model</li>
+                  <li>Next Steps</li>
+                </ol>
+                <p>Note:   This project was implemented without using Machine Learning and has proven to be successful.   The next steps are to implement machine learning algorithms on the data. </p>
+                <h2>Key Challenges</h2>
+                <p>Before implementing the framework, there were challenges to be faced:</p>
+                <ul>
+                    <li>**Maintainability:** UI changes often broke tests, as locators were hardcoded within test scripts.</li>
+                    <li>**Code Duplication:** Common actions and helper methods were replicated across multiple files.</li>
+                    <li>**Readability:** Scripts were difficult to read and understand, blending test logic with page interactions.</li>
+                    <li>**Inconsistency:** There are many inconsistencies between Kenpom and VegasInsider.  Maps of team names had to be created to link some of the smaller schools which were inconsistent.</li>
+                </ul>
+
+                <h2>My Approach & Design</h2>
+                <p>I built the framework from the ground up, with Pytest as the test runner due to its simplicity and powerful features like fixtures. The core of the framework is the Page Object Model, which provides a clean and structured way to manage test code.</p>
+                
+                <h3>Page Object Model Implementation:</h3>
+                <p>Each distinct web page or major component (e.g., login page, checkout page, header) of the application was represented by a separate Python class. This class contained:</p>
+                <ul>
+                    <li><strong>Web Elements:</strong> A list of locators (e.g., `By.ID`, `By.XPATH`) for all the elements on that page.</li>
+                    <li><strong>Page Methods:</strong> Actions that can be performed on the page (e.g., `login(username, password)`, `click_add_to_cart()`).</li>
+                </ul>
+                <p>This approach ensured that if a UI element's locator changed, only one file (the Page Object) needed to be updated, not every single test script that used it.</p>
+
+                <h3>Framework Features:</h3>
+                <ul>
+                    <li>**Pytest Fixtures:** Used to manage browser instances and other setup/teardown logic efficiently.</li>
+                    <li>**Configuration Management:** A centralized `config.ini` file to handle environment-specific data like URLs, usernames, and passwords.</li>
+                    <li>**Test Data Handling:** Utilized CSV files and Python's `unittest.TestCase` to enable data-driven testing for scenarios like form validation and user logins.</li>
+                    <li>**Reusable Utilities:** Created a separate `utils` module for common tasks like taking screenshots, handling waits, and logging.</li>
+                </ul>
+                <h2>Running the Model</h2>
+                <ul>
+                    <li>**Enhanced Maintainability:** The POM design reduced the effort required for test suite maintenance by approximately <strong>50%</strong>.</li>
+                    <li>**Improved Code Readability:** Test scripts became concise and easy to understand, reading almost like plain English.</li>
+                    <li>**Increased Reliability:** The use of explicit waits and a stable framework structure led to more consistent and reliable test runs.</li>
+                    <li>**Reliability:** There are many inconsistencies between Kenpom and VegasInsider.  Maps of team names had to be created to link some of the smaller schools which were inconsistent.</li>
+                </ul>
+
+                <h2>Code Snippets & Project Links</h2>
+                <h2>Results & Impact</h2>
+                <ul>
+                    <li>**Enhanced Maintainability:** The POM design reduced the effort required for test suite maintenance by approximately <strong>50%</strong>.</li>
+                    <li>**Improved Code Readability:** Test scripts became concise and easy to understand, reading almost like plain English.</li>
+                    <li>**Increased Reliability:** The use of explicit waits and a stable framework structure led to more consistent and reliable test runs.</li>
+                    <li>**Reliability:** There are many inconsistencies between Kenpom and VegasInsider.  Maps of team names had to be created to link some of the smaller schools which were inconsistent.</li>
+                </ul>
+
+                <h2>Code Snippets & Project Links</h2>
+                <p>The following is an example of a Page Object class for a login page:</p>
+                <div class="code-example">
+                    <h4>Example: Login Page Object (Python)</h4>
+                    <pre><code class="language-python">
+                  from selenium.webdriver.common.by import By
+                  from selenium.webdriver.support.ui import WebDriverWait
+                  from selenium.webdriver.support import expected_conditions as EC
+
+                  class LoginPage:
+                      def __init__(self, driver):
+                          self.driver = driver
+                          self.username_input = (By.ID, "user-name")
+                          self.password_input = (By.ID, "password")
+                          self.login_button = (By.ID, "login-button")
+
+                      def login(self, username, password):
+                          WebDriverWait(self.driver, 10).until(
+                              EC.visibility_of_element_located(self.username_input)
+                          ).send_keys(username)
+                          self.driver.find_element(*self.password_input).send_keys(password)
+                          self.driver.find_element(*self.login_button).click()
+    </code></pre>
+                </div>
+
+                <p class="project-github-link">
+                    <a href="https://github.com/yourusername/selenium-python-pom" target="_blank" class="button button-github"><i class="fab fa-github"></i> View Project on GitHub</a>
+                </p>
+
+            </div>
+
+            <div class="post-navigation">
+                <a href="projects.html" class="button-secondary">&larr; Back to All Projects</a>
+            </div>
+        </article>
+    </section>
+
+    <hr>
+    <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <script src='assets/js/global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

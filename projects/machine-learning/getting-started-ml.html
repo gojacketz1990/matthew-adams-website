@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting A Machine Learning Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <!-- Corrected CSS link: removed leading slash -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" xintegrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <!-- Corrected Home link to be explicit relative path -->
+        <a href="./"> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <!-- Corrected Home link to be explicit relative path -->
+            <li><a href="./">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+    <hr>
+    <section class="constrain" id="whatisml">
+        <div class="about-text">
+
+            <h2>Key Steps in a Machine Learning Project</h2>
+            <ul>
+              <li><strong>1. Problem Definition</strong> </li>
+              <ul>
+                <li>
+                  <strong>What it is</strong>This is the most crucial step.  Before you think about data or algorithms, what are you trying to achieve?  Is this a classification problem?   Regression?   Something Else?
+                </li>
+                <li>
+                  <strong>Key Activities </strong>Define objectives, identify desired outcomes, understand business constraints, establish clear success metrics (both business and technical, like accuracy or F1-score), and assess feasibility (do you have the data and resources?).
+                </li>
+              </ul>
+              <li><strong>2. Data Collection</strong> </li>
+              <ul>
+                <li>
+                  <strong>What it is</strong>Once you know the problem, you need data to solve it! This involves gathering all relevant data from various sources.
+                </li>
+                <li>
+                  <strong>Key Activities </strong>Identify data sources, collect raw data and consider data privacy.
+                </li>
+              </ul>
+              <li><strong>3. Data Preparation</strong> </li>
+              <ul>
+                <li>
+                  <strong>What it is</strong>Raw data is rarely ready for an ML model. This phase involves cleaning, transforming, and understanding your data.
+                </li>
+                <li>
+                  <strong>Key Activities </strong>
+                  <ul>
+                    <li>Data Cleaning - Handle missing values (impute or remove), correct errors, remove duplicates, and address inconsistencies.</li>
+                    <li>Data Transformation - Convert data types, normalize/scale numerical features, encode categorical variables (e.g., one-hot encoding).</li>
+                    <li>Data Analysis - Visualize data to understand patterns, distributions, relationships between variables, and identify outliers or anomalies. This helps you gain insights and guides subsequent steps like feature engineering.</li>
+                    <li>Data Splitting - Divide the prepared data into training, validation, and test sets. The training set is used to train the model, the validation set to tune hyperparameters, and the test set for a final, unbiased evaluation.</li>
+                  </ul>
+                </li>
+              </ul>
+              <li><strong>4. Feature Engineering</strong> </li>
+                <ul>
+                <li>
+                  <strong>What it is</strong>This is the art and science of creating new input features for your model from existing raw data. Well-engineered features can significantly improve model performance.
+                </li>
+                <li>
+                  <strong>Key Activities </strong>Derive new features (e.g., combine existing columns, extract components from text/dates), select the most relevant features (feature selection), and reduce dimensionality if necessary. This often requires strong domain knowledge.
+                </li>
+                </ul>
+                <li><strong>5. Model Selection and Training</strong> </li>
+                <ul>
+                <li>
+                  <strong>What it is</strong>Choosing the right machine learning algorithm(s) for your problem and then teaching the model to find patterns in the training data.
+                </li>
+                <li>
+                  <strong>Key Activities </strong>Select appropriate ML algorithms (e.g., linear regression, decision trees, neural networks) based on your problem type and data characteristics, train the model on the training data, and tune hyperparameters (settings that control the learning process) using the validation data.
+                </li>
+                </ul>
+                <li><strong>6. Model Evaluation</strong> </li>
+                <ul>
+                <li>
+                  <strong>What it is</strong>Assessing how well your trained model performs and whether it meets the defined success metrics.
+                </li>
+                <li>
+                  <strong>Key Activities </strong> Evaluate the model's performance on the unseen test data using relevant metrics (e.g., accuracy, precision, recall, F1-score, RMSE, AUC), analyze errors, and understand the model's limitations. This step often involves iteration back to earlier stages (e.g., if performance is poor, you might need more data, better cleaning, or different features/models).
+                </li>
+                </ul>
+                <!-- START: Model Tuning Section -->
+                <li><strong>7. Model Tuning (Hyperparameter Optimization)</strong></li>
+                    <p>After evaluating your initial model, you might find its performance isn't optimal. This is where **model tuning**, also known as **hyperparameter optimization**, comes into play. It's the process of finding the best set of hyperparameters for your chosen machine learning algorithm to maximize its performance on your specific dataset.</p>
+
+                    <strong>What are Hyperparameters?</strong>
+                    <p>Think of hyperparameters as the "settings" or "knobs" of your machine learning algorithm that you set *before* the training process begins. They are different from model parameters, which are learned *during* training (e.g., the weights in a neural network). Examples of hyperparameters include:</p>
+                    <ul>
+                        <li>**Learning Rate:** (e.g., in Gradient Boosting, Neural Networks) controls how much the model adjusts its weights with respect to the loss gradient.</li>
+                        <li>**Number of Trees:** (e.g., in Random Forest, Gradient Boosting) determines the number of decision trees in the ensemble.</li>
+                        <li>**Max Depth:** (e.g., in Decision Trees, Random Forest) limits how deep a tree can grow.</li>
+                        <li>**Regularization Strength:** (e.g., in Logistic Regression, SVM) controls the complexity of the model to prevent overfitting.</li>
+                        <li>**Number of Neighbors (k)::** (e.g., in K-Nearest Neighbors) determines how many nearest data points to consider.</li>
+                    </ul>
+
+                    <strong>Why is Tuning Important?</strong>
+                    <p>The default hyperparameters of an algorithm are often generic and not optimized for every dataset. Tuning helps:</p>
+                    <ul>
+                        <li>**Improve Performance:** Achieve higher accuracy, lower error, or better F1-scores.</li>
+                        <li>**Prevent Overfitting/Underfitting:** Find a balance where the model generalizes well to new data without being too simple (underfitting) or too complex (overfitting).</li>
+                    </ul>
+
+                    <strong>Common Tuning Techniques (for Beginners):</strong>
+                    <p>For those starting out, two popular and effective techniques are:</p>
+                    <ol>
+                        <li>
+                            **Grid Search:**
+                            <p>This method involves defining a grid of hyperparameter values to test. The algorithm then systematically tries every possible combination of these values. For each combination, the model is trained and evaluated (often using cross-validation). The combination that yields the best performance is selected.</p>
+                            <p><em>Pros:</em> Guarantees finding the best combination within the defined grid.</p>
+                            <p><em>Cons:</em> Can be computationally very expensive and slow, especially with many hyperparameters or a wide range of values.</p>
+                        </li>
+                        <li>
+                            **Random Search:**
+                            <p>Instead of trying every combination, Random Search samples a fixed number of hyperparameter combinations from a specified distribution for each hyperparameter. It's often more efficient than Grid Search, especially when some hyperparameters have a much greater impact on performance than others.</p>
+                            <p><em>Pros:</em> Often finds a good set of hyperparameters faster than Grid Search, especially in high-dimensional search spaces.</p>
+                            <p><em>Cons:</em> Does not guarantee finding the absolute best combination within the defined range, but often finds a "good enough" solution more quickly.</p>
+                        </li>
+                        <li>
+                            **Bayesian Optimization (Bayes Search CV):**
+                            <p>This is a more advanced and efficient technique that uses a probabilistic model to guide the search for optimal hyperparameters. Unlike Grid Search and Random Search, which are "blind" in their exploration, Bayesian Optimization learns from the results of previous evaluations to intelligently select the next set of hyperparameters to try. It balances exploration (trying new, uncertain areas) with exploitation (focusing on areas that have shown good results).</p>
+                            <p><em>Pros:</em> More efficient in finding optimal hyperparameters, especially for complex models and large search spaces, often requiring fewer evaluations than Grid or Random Search.</p>
+                            <p><em>Cons:</em> Can be more complex to set up and understand initially; each iteration might take longer due to the model-building step.</p>
+                        </li>
+                    </ol>
+                    <p>Both Grid Search and Random Search are typically combined with **Cross-Validation** (e.g., K-Fold Cross-Validation) during the evaluation of each hyperparameter combination. This ensures that the chosen hyperparameters lead to a model that generalizes well, rather than just performing well on a single validation split.</p>
+
+                    <h4>Tools for Tuning:</h4>
+                    <p>In Python, libraries provide easy-to-use implementations for these techniques:</p>
+                   <ul>
+                        <li>`scikit-learn` for `GridSearchCV` and `RandomizedSearchCV`</li>
+                        <li>`scikit-optimize` (specifically `skopt.BayesSearchCV`) for Bayesian Optimization</li>
+                    </ul>
+                </li>
+                <!-- END: Model Tuning Section -->
+                <li><strong>8. Model Deployment</strong> </li>
+                <ul>
+                <li>
+                  <strong>What it is</strong>Once the model is performing satisfactorily, it's put into a production environment where it can start making predictions or decisions on new, real-world data.
+                </li>
+                <li>
+                  <strong>Key Activities </strong>Integrate the model into existing systems (e.g., via APIs), build robust pipelines, and ensure scalability and efficiency.
+                </li>
+                </ul>
+                <li><strong>9. Monitoring and Maintenance</strong> </li>
+                <ul>
+                <li>
+                  <strong>What it is</strong>Machine learning models are not "fire and forget." Their performance can degrade over time due to changes in data patterns or the environment (known as concept drift or data drift). This ongoing phase ensures the model remains effective.
+                </li>
+                <li>
+                  <strong>Key Activities </strong> Continuously monitor model performance, data quality, and system health; retrain the model with fresh data as needed; update the model to account for changes in the problem or data; and manage versions of models and data.
+                </li>
+                </ul>
+            </ul>
+
+
+        </div>
+    </section>
+
+
+
+    <hr> <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <!-- Corrected script src: removed leading slash -->
+    <script src='assets/js/global.js'></script>
+  </body>
+</html>

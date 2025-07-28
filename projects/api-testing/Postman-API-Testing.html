@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman API Testing</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" xintegrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Removed Tailwind CSS CDN and inlined styles -->
+</head>
+<body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <a href=""> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </header>
+    <hr>
+<section class="constrain" id="project-detail-content">
+        <article class="project-case-study">
+            <header class="project-header">
+                <h1>Postman API Testing</h1>
+                <p class="project-summary-meta">
+                    **Category:** API Automation Framework | **Tools: JavaScript, Vitest, Axios, API Authentication, GitHub
+                </p>
+                <p>**Duration:** 2 Months</p>
+                </header>
+
+            <div class="project-body">
+                <h2>Project Overview</h2>
+                <p>This custom Selenium/Python Page Object Model begun while working at Warner Brothers Discovery when I was given the responsibility of automating several legacy projects and new projects that came down the pipeline. The solution was to design and implement a robust and scalable test automation framework using Selenium, Python, Pytest and Allure for reporting.</p>
+
+                <p>This is a custom Page Object Model Framework built in Selenium/Python that is set up to quickly integrate with new projects. The chosen project is a custom REACT/MERN Stack project that I created to categorize and organize trading cards.</p>
+                  
+                <p>The primary goal was to create a maintainable and reusable suite for any web platform's critical user journeys, centered around the Page Object Model (POM) design pattern to separate test logic from UI locators. This framework needed to be simple to understand, fully documented and ready to implement as resources became available.</p>
+
+
+                <p>Note: This project was implemented without using Machine Learning and has proven to be successful. The next steps are to implement machine learning algorithms on the data. </p>
+
+                <h2>Project Setup</h2>
+                <p>Before creating tests we have to get a few things set up. I am working on a Macbook so will approach this from there.</p>
+                  <strong>Environment Setup </strong>
+                  <ul>
+                    <li>Install Postman - First thing you will need it to get VS Code set up for your environment.</li>
+                    <ul>
+                      <li>Go to https://www.postman.com/downloads/</li>
+                      <li>Download the Mac version (or appropriate version)</li>
+                      <li>Open Postman and drag it to Applications folder.</li>
+                      <li>Launch Postman.</li>
+                    </ul>
+                    <li>Create a new Workspace for your project.</li>
+                    <li>Create a new Collection for your project.</li>
+
+                <h2>Getting Ready To Create API Tests</h2>
+                <p>To begin API Testing there are a few things that must be identified.</p>
+                <h3>API Information Needed</h3>
+                <li>What does the API do?</li>
+                <li>What endpoints need to be tested? (e.g., /users, /login, /products/{id}</li>
+                <li>What methods are supported? (GET, POST, PUT, PATCH, DELETE, etc.)</li>
+                <li>What are the request and response formats? (usually JSON, sometimes XML, etc)</li>
+                <li>What are the required request parameters, headers, and body fields?</li>
+
+                <h3>Additional Information</h3>
+                <li>Is there an OpenAPI or Swagger specification?</li>
+                <li>Is there an API contract or design document?</li>
+                <li>What are the Success and Failure Status Codes?</li>
+                <li>Are there any default values and optional or required fields?</li>
+
+                <h3>Security/Authentication</h3>
+                <li>Does the API require API keys?</li>
+                <li>Does the API use OAuth tokens or JWT??</li>
+                <li>Does the API use session cookies?</li>
+
+                <h3>Types of Testing Needed</h3>
+                <li>Functional testing: does the API do what it should?</li>
+                <li>Negative testing: how does it handle invalid input?</li>
+                <li>Security testing: unauthorized access, SQL injection, etc.</li>
+                <li>Performance testing: how fast does it respond? how does it behave under load?</li>
+                <li>Contract/schema testing: does the response always match the documented schema?</li>
+                <li>Boundary testing: very large inputs, empty inputs, etc.</li>
+
+                <h3>Dependencies/Environments</h3>
+                <li>Is there a Testing Environment to safely run tests?</li>
+                <li>Are there dependent services or databases that the API interacts with?</li>
+                <li>Do you need test data to be set up before running tests?</li>
+
+                <h3>Test Data Strategy</h3>
+                <li>Do you need fresh data for each test?</li>
+                <li>How do you clean test data after testing?</li>
+                <li>Can tests run in parallel, and could that cause conflicts?</li>
+                <li>Will we integrate the API tests into the CI/CD pipeline?</li>
+
+                <h2>Creating API Tests</h2>
+                <p>Our testing environment in Postman is set up, and we assume all of our questions are answered. It is time to create some tests in with Postman.</p>
+
+                <h3>Project Structure</h3>
+                <p>Here is the folder structure for our project. </p>
+                <!-- Start of API Testing Project Structure HTML -->
+                  <div class="project-structure-container">
+                    <h1 class="project-structure-title">API Testing Project Structure</h1>
+
+                    <div class="project-structure-list">
+                        <!-- Root Folder -->
+                        <div class="project-structure-item level-0">
+                            <span class="folder-icon project-structure-icon"></span>
+                            <span>Baseball-Card-API-Testing-Project/</span>
+                        </div>
+
+                        <!-- Sub-items of root -->
+                        <div class="project-structure-list-nested">
+                            <!-- node_modules -->
+                            <div class="project-structure-item level-1">
+                                <span class="node-modules-icon project-structure-icon"></span>
+                                <span>Auth/</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                              <span>Login</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                              <span>Refresh Token</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                              <span>Logout</span>
+                            </div>
+                            <!-- test folder -->
+                            <div class="project-structure-item level-1">
+                                <span class="folder-icon project-structure-icon"></span>
+                                <span>Users</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Create User</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Get User By ID</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Update User</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Delete User</span>
+                            </div>
+                           <div class="project-structure-item level-1">
+                                <span class="folder-icon project-structure-icon"></span>
+                                <span>Trading Cards</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Create Card</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Patch/Update Card</span>
+                            </div>
+                            <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Get Cards by ID</span>
+                            </div>
+                             <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Get Cards by User</span>
+                            </div>
+                             <div class="project-structure-item level-2">
+                                <span class="file-icon project-structure-icon"></span>
+                                <span>Delete Card</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Creating Tests</h3>
+                </div>
+                </div>
+                <h3>Creating Variables</h3>
+                </div>
+                </div>
+                <h3>Creating Environments</h3>
+                </div>
+             </div>
+                <h3>Running Tests</h3>
+                </div>
+                <p class="project-github-link">
+                    <a href="https://github.com/gojacketz1990/BaseBallCardProject" target="_blank" class="button button-github"><i class="fab fa-github"></i> View Project on GitHub</a>
+                </p>
+
+            </div>
+
+            <div class="post-navigation">
+                <a href="projects" class="button-secondary">&larr; Back to All Projects</a>
+            </div>
+        </article>
+    </section>
+
+    <hr>
+    <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <script src='assets/js/global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

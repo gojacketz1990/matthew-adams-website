@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models And Machine Learning Specifics</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <a href=""> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+    <hr>
+    <section class="constrain" id="whatisml">
+        <div class="about-text">
+
+            <h2>What Are Machine Learning Models?</h2>
+            <p>A machine learning model is esssentially a computer program that has been trained to recognize patterns, make decisioins or generate predictions from data.   Basically it is a computer with a brain that learns from experience, much like you or I would.</p>
+
+            <h2>Types of Supervised Learning Tasks</h2>
+            <p>When dealing with Supervised Learning there are two fundamental tasks that you will find:</p>
+            <ul>
+              <li><strong>Classification</strong>Classification is a supervised learning task where the goal is to predict a discrete, categorical label or class given the input.
+              <ul>
+                <li>Binary Classification - two possible outputs (e.g. span/not spam, yes/no, malignant/benign).  This is the simplest form.</li>
+                <li>Multi-class Classificaiton - more than two output categories but each belongs to only one category (e.g. cat, dog, bird)</li>
+                <li>Multi-label Classification - An input can belong to multiple categories simultaneously (e.g., an image containing both a "cat" and a "dog").</li>
+              </ul>
+            <h4>Common Applications</h4>
+            <ul>
+              <li>Email Spam Detection</li>
+              <li>Image Recognition</li>
+              <li>Medical Diagnosis</li>
+              <li>Sentimental Analysis</li>
+              <li>Fraud Detection</li>
+            </ul>
+          </li>
+
+
+          <li><strong>Regression</strong>Regression is a supervised learning task where the goal is to predict a continuous numerical output for a given input. Imagine drawing a line or curve through data points to estimate future values. 
+              <ul>
+                <li>Continuous Output - The output variable can take any value within a range (e.g., real numbers). There are infinitely many possible outputs.</li>
+              </ul>
+            <h4>Common Applications</h4>
+            <ul>
+              <li>House Price Prediciton</li>
+              <li>Stock Price Prediciton</li>
+              <li>Temperature Prediciton</li>
+              <li>Sales Forecasting</li>
+              <li>Age Prediction</li>
+              <li>Credit Score Prediction</li>
+            </ul>
+              
+            </li>
+            </ul>
+
+            
+            <h2>Types of Machine Learning Models</h2>
+            <p>For the most part we will stick to Supervised Learning Models, but here is some info on other types as well.</p>
+            <ul>
+              <li><strong>Supervised Learning Models</strong>These models are trained on labeled data which means that the input data is paired with correct output or "answer".  The model learns to map inputs to desired outputs.</li>
+                <ul><li><strong>Common Types</strong></li>
+                  <ul>
+                  <li>Classification</li>
+                  <li>Regression</li>
+                  </ul>
+                  <li><strong>Algorithm Examples</strong></li>
+                  <ul>
+                    <li>Linear Regression</li>
+                    <li>Logistic Regression</li>
+                    <li>Decision Trees</li>
+                    <li>Support Vector Machines</li>
+                    <li>K-Nearest Neighbors</li>
+                    <li>Neural Networks</li>
+                  </ul>
+                </ul>
+              <li><strong>Unupervised Learning Models</strong>These models are given unlabeled data and are tasked with finding hidden patterns, structures, or relationships within the data on their own, without specific guidance.</li>
+                <ul><li><strong>Common Types</strong></li>
+                  <ul>
+                  <li>Clustering</li>
+                  <li>Dimensionality Reduction</li>
+                  <li>Association</li>
+                  </ul>
+                  <li><strong>Algorithm Examples</strong></li>
+                  <ul>
+                    <li>K-Means Clustering</li>
+                    <li>Hierarchical Clustering</li>
+                    <li>Principal Component Analysis</li>
+
+                  </ul>
+                  </ul>
+              <li><strong>Reinforcement Learning Models</strong>These models learn by interacting with an environment through trial and error. They receive rewards for desired actions and penalties for undesirable ones, aiming to maximize their cumulative reward over time. </li>
+              <li><strong>Semi-supervised Learning Models</strong>These models combine elements of both supervised and unsupervised learning. They leverage a small amount of labeled data along with a larger amount of unlabeled data to improve learning, especially when labeling data is costly or time-consuming.</li>
+              <li><strong>Deep Learning Learning Models</strong>A subset of machine learning, deep learning models are characterized by their "deep" artificial neural networks, which have multiple layers. These models can learn complex representations from raw, unstructured data (like images, audio, or text) and are capable of more human-like functions.</li>
+            </ul>
+
+        </div>
+    </section>
+
+
+
+    <hr> <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <script src='assets/js/global.js'></script>
+  </body>
+</html>
