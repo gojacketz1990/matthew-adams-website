@@ -25,7 +25,7 @@ hr {
   margin: 0 auto;
   padding: 20px 20px;
 }
-
+/*
 .button {
   text-decoration: none;
   padding: 8px 16px;
@@ -33,6 +33,46 @@ hr {
   transition: background-color 0.3s;
   display: inline-block;
 }
+  */
+
+.button {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    display: inline-flex; /* Changed from inline-block to inline-flex to easily align icon and text */
+    align-items: center; /* Vertically centers content (icon and text) */
+    justify-content: center; /* Horizontally centers content if needed */
+}
+
+/* New class for a larger, more prominent button */
+.button-large {
+    padding: 15px 35px; /* Larger padding for bigger button */
+    font-size: 1.1em; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 30px; /* More rounded, pill-like shape */
+    box-shadow: 0 4px 10px rgba(239, 105, 0, 0.3); /* Orange shadow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Specific hover effects for the large orange button */
+.button-orange.button-large:hover {
+    background-color: #d85c00; /* A slightly darker orange on hover */
+    transform: translateY(-3px); /* Lifts the button slightly */
+    box-shadow: 0 8px 15px rgba(239, 105, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.button-orange.button-large:active {
+    transform: translateY(0); /* "Press down" effect */
+    box-shadow: 0 2px 5px rgba(239, 105, 0, 0.2);
+}
+
+/* Icon styling within buttons */
+.button-large i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Adjust icon size relative to text */
+}
+
 
 .button-orange {
   background-color: #ef6900;
@@ -928,6 +968,25 @@ hr {
 
 .file-icon {
     color: #4a5568; /* text-gray-600 */
+}
+
+
+/* --- Call to Action (CTA) Section --- */
+.about-me-cta {
+    text-align: center; /* Center the content within this section */
+    margin-top: 40px; /* Space above the CTA */
+    margin-bottom: 60px; /* Space below the CTA */
+    padding: 20px;
+}
+
+.about-me-cta p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 25px; /* Space between the text and the button */
+    max-width: 700px; /* Keep paragraph readable */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 
