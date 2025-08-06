@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Adams</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Corrected CSS link: removed leading slash -->
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tailwind CSS CDN - IMPORTANT for the grid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" xintegrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- base href="/matthew-adams-website/">  -->
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <!-- Corrected link: removed leading slash -->
+        <a href="">Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <!-- Corrected links: removed leading slash -->
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+    <hr>
+    <section class="constrain" id="intro">
+        <div class="about-text">
+            <h2>Hello, I am Matthew Adams</h2>
+            <p>As an <a href='https://atsqa.org/certified-testers/profile/e07aafb19eae4afba290bca334c592eb'>ISTQB CTFL</a> certified Quality Assurance Lead and Automation Engineer from Marietta, Georgia I focus on embedding quality at every stage in the lifecycle.   I specialize in providing subject matter expertise, optimizing quality workflows and building robust automation frameworks,  My passion lies in designing meticulous testing strategies that minimize defects and optimize performance. Explore my approach to quality and connect with me.
+            </p>
+            <p>My background also includes extensive experience in performance testing enterprise applications, capacity planning and performance tuning across diverse architectures.
+            </p>
+            <div class="about-me-cta">
+                <p>Want to know more about my background, skills, and personal interests?</p>
+                <a href="more-about-me.html" class="button button-orange button-large">
+                    <i class="fas fa-arrow-right"></i> More About Me
+                </a>
+            </div>
+            </div>
+    </section>
+    
+     <!-- START: 2x2 Grid Section -->
+    <section class="constrain py-12" id="work-overview">
+        <h2 class="text-3xl text-gray-900 text-center mb-12">What I Have Worked On (and Am Working On)</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Section 1: Automation Testing (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/automation/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/selenium.jpeg" alt="Selenium Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Automation Testing</h2>
+                <p class="text-gray-600">Building robust automation frameworks with Selenium and other tools to ensure software quality and efficiency.</p>
+            </a>
+
+            <!-- Section 2: API Testing Frameworks (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/api-testing/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/postman_icon.png" alt="Postman Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">API Testing Frameworks</h2>
+                <p class="text-gray-600">Developing robust API testing frameworks to ensure the reliability and performance of backend services. </p>
+            </a>
+
+            <!-- Section 3: Performance Testing (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/performance-testing/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/load-runner.png" alt="Loadrunner Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Performance Testing</h2>
+                <p class="text-gray-600">Optimizing application speed and responsiveness to ensure systems can handle expected loads and deliver seamless user experiences under various conditions.</p>
+            </a>
+
+            <!-- Section 4: Machine Learning (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/machine-learning/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/ai.jpg" alt="AI Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Machine Learning</h2>
+                <p class="text-gray-600">Developing and deploying machine learning models to solve complex problems and drive intelligent solutions.</p>
+            </a>
+        </div>
+    </section>
+    <!-- END: 2x2 Grid Section -->
+
+    <hr> <section class="constrain" id="blog-preview">
+        <div class="blog-intro-text">
+            <h2>Blog</h2>
+            <p>A collection of my thoughts and observations.</p>
+        </div>
+
+        <div class="blog-posts-grid">
+            <article class="blog-post-card">
+                <h3><!-- Corrected link: removed leading slash -->
+                <a href="blog/qacerts.html">The Importance of Certification in the Quality Assurance (QA) Field</a></h3>
+                <p class="post-meta">Published on <time datetime="2025-07-24">July 24, 2025</time> | Category: QA Strategy</p>
+                <p>In the world of Quality Assurance, how important are QA Certifications such as ISTQB CTFL, CSQE, CSTE, CST?  While practical experience remains paramount, the increasing complexity of software and the demand for standardized practices highlight why these certifications are gaining significant traction...</p>
+                <!-- Corrected link: removed leading slash -->
+                <a href="blog/qacerts.html" class="read-more">Read More &rarr;</a>
+            </article>
+            <article class="blog-post-card">
+                <h3><!-- Corrected link: removed leading slash -->
+                <a href="blog/ai-in-qa.html">AI in QA: Friend of Foe?</a></h3>
+                <p class="post-meta">Published on <time datetime="2025-07-15">July 15, 2025</time> | Category: Artificial Intelligence</p>
+                <p>In the rapidly evolving landscape of software development, Quality Assurance (QA) has often been perceived as a crucial, yet sometimes bottlenecked, stage. However, with the advent of Artificial Intelligence (AI), this perception is undergoing a fundamental shift. In the rapidly evolving landscape of software development, Quality Assurance (QA) has often been perceived as a crucial...</p>
+                <!-- Corrected link: removed leading slash -->
+                <a href="blog/ai-in-qa.html" class="read-more">Read More &rarr;</a>
+            </article>
+
+        </div>
+
+        <div class="all-posts-link">
+            <!-- Corrected link: removed leading slash -->
+            <a href="blog.html" class="button-secondary">View All Posts</a>
+        </div>
+    </section>
+
+    <hr> <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <!-- Corrected script src: removed leading slash -->
+    <script src='assets/js/global.js'></script>
+  </body>
+</html>

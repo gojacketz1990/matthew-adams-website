@@ -1,0 +1,1042 @@
+
+/* Base Styles */
+body {
+  background-color: #f0f0f0; /* A common light gray color */
+  color: #333333;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+
+}
+
+/*
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+ }
+*/
+hr {
+  display: none;
+}
+/* reusable/generics*/
+.constrain {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+/*
+.button {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+  */
+
+.button {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    display: inline-flex; /* Changed from inline-block to inline-flex to easily align icon and text */
+    align-items: center; /* Vertically centers content (icon and text) */
+    justify-content: center; /* Horizontally centers content if needed */
+}
+
+/* New class for a larger, more prominent button */
+.button-large {
+    padding: 15px 35px; /* Larger padding for bigger button */
+    font-size: 1.1em; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 30px; /* More rounded, pill-like shape */
+    box-shadow: 0 4px 10px rgba(239, 105, 0, 0.3); /* Orange shadow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Specific hover effects for the large orange button */
+.button-orange.button-large:hover {
+    background-color: #d85c00; /* A slightly darker orange on hover */
+    transform: translateY(-3px); /* Lifts the button slightly */
+    box-shadow: 0 8px 15px rgba(239, 105, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.button-orange.button-large:active {
+    transform: translateY(0); /* "Press down" effect */
+    box-shadow: 0 2px 5px rgba(239, 105, 0, 0.2);
+}
+
+/* Icon styling within buttons */
+.button-large i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Adjust icon size relative to text */
+}
+
+
+.button-orange {
+  background-color: #ef6900;
+  color: white;
+}
+
+.button-orange:hover {
+  background-color: #eda36a;
+}
+
+.button-white {
+  background-color: white;
+  color: #ef6900;
+}
+
+.button-white:hover {
+  background-color: #eee;
+}
+/* Header */
+.header {
+  background-color: #333333;
+
+}
+
+.header .constrain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+}
+.header h1 span {
+  display: none;
+}
+.header h1 img {
+  width: 30px;
+  display: block;
+}
+.header a{
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+  /*border: 1px solid white;*/
+  /*margin: 10px;*/
+  /*padding: 10px;*/
+}
+
+.header a:hover {
+  color: white;
+
+}
+.header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header nav ul a {
+  margin-left: 25px;
+}
+
+/* product */
+.product {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 100px 0;
+}
+
+.product:first-child {
+  padding-top: 20px;
+}
+
+
+.product:last-child {
+  border-bottom: none;
+}
+.product-reverse {
+  flex-direction: row-reverse;
+}
+
+.product-text, .product-image {
+  flex: 50% 0 0;
+}
+
+.product-text h1, .content h1{
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+.product-text h2, .content h2 {
+  font-size: 21px;
+}
+
+.product-text p, .content p {
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.product-nav {
+  margin-top: 30px;
+}
+.product-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.product-nav ul a {
+  margin-right: 20px;
+}
+.product-image img {
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.intro-text {
+    text-align: center; /* This centers everything inside, including the h2 and p by default */
+    margin-bottom: 30px; /* Add some space below the text */
+}
+
+.intro-text h2 {
+    font-size: 2.5em; /* Adjust font size as desired */
+    color: #333;
+    margin-bottom: 10px; /* Space between name and paragraph */
+    /* text-align: center; is inherited from .intro-text */
+}
+
+.intro-text p {
+    text-align: left; /* <-- THIS IS THE KEY CHANGE for left justification */
+    font-size: 1.1em; /* Adjust font size for paragraph */
+    color: #555;
+    line-height: 1.6;
+    max-width: 960px; /* Limit paragraph width for better readability */
+    margin: 0 auto; /* This will center the *block* of the paragraph if its width is less than parent */
+}
+
+.about-text p{
+    text-align: center; /* This centers everything inside, including the h2 and p by default */
+    margin-bottom: 30px; /* Add some space below the text */
+}
+
+.about-text h2 {
+    font-size: 2.5em; /* Adjust font size as desired */
+    color: #333;
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: left; 
+}
+
+.about-text h3 {
+    font-size: 1.5em; /* Adjust font size as desired */
+    color: #333;
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: left; 
+}
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text p {
+  
+    text-align: left; /* <-- THIS IS THE KEY CHANGE for left justification */
+    font-size: 1.1em; /* Adjust font size for paragraph */
+    color: #555;
+    line-height: 1.6;
+    /*max-width: 800px;  Limit paragraph width for better readability */
+    margin-bottom: 1em; /* This will center the *block* of the paragraph if its width is less than parent */
+}
+
+/* Style for the LinkedIn link itself */
+.about-text p a {
+    color: #007bff; /* Initial color of the link (e.g., a standard blue) */
+    text-decoration: none; /* Initial underline */
+    font-weight: bold; /* Make it stand out slightly */
+
+    /* ----- Add the transition property here ----- */
+    /* Syntax: transition: [property] [duration] [timing-function] [delay]; */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    /* This means:
+       - Animate the 'color' property over 0.3 seconds with an 'ease' timing function.
+       - Animate the 'text-decoration' property over 0.3 seconds with an 'ease' timing function.
+    */
+}
+
+/* Style for the link when hovered */
+.about-text p a:hover {
+    color: #0056b3; /* A darker shade of blue on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.work-overview h2 {
+    font-size: 2.5em; /* Adjust font size as desired */
+    color: #333;
+    margin-bottom: 15px; /* Space below the heading */
+    text-align: left; 
+}
+/* Add this to your style.css file */
+
+/* Target the direct child <ul> of the <li> that contains 'Problem Definition' */
+/* This specific selector helps avoid affecting other nested lists unintentionally */
+.about-text ul ul li {
+    margin-top: 5px; /* Add a little space above 'Understand the Problem' */
+    margin-bottom: 10px; /* Add space below 'Understand the Problem' */
+}
+
+.about-text ul li {
+    margin-bottom: 15px; /* Adjust this value as needed for your desired space */
+    /* You might also want to remove any previous margin-bottom on .about-text ul li strong
+       if you added it, to avoid double spacing. */
+}
+
+/* You could also target the <strong> tag directly for space around its text,
+   but it's often better to control spacing via the list items.
+   If you want space just below "Problem Definition" text itself: */
+.about-text ul li strong {
+    display: block; /* Make the strong tag a block element to accept margin-bottom */
+    margin-bottom: 8px; /* Adjust this value for desired space */
+}
+/* cookies banner*/
+.cookies-banner {
+  background-color: #333;
+  color: #ddd;
+  padding: 30px 0;
+  /* Fix the banner: */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%); /* Hides banner at bottom */
+  transition: transform 0.3s;
+}
+
+.cookies-banner.show {
+  transform: translateY(0%);
+}
+
+.cookies-banner .constrain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cookies-banner h1 {
+  margin-top: 0;
+}
+
+.cookies-banner p {
+  margin-bottom: 0;
+}
+
+
+
+  /* About page */
+
+
+.social-links-container {
+    max-width: 600px; /* Adjust max-width to control how wide the row can be */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: silver;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* For centering the row if it's narrower than its parent */
+
+    /* --- Flexbox for the row layout --- */
+    display: flex; /* Make the container a flex container */
+    justify-content: center; /* Center items horizontally within the container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 20px; /* Space between each social link */
+}
+
+.social-link {
+    display: flex; /* Make each link a flex container for its icon and text */
+    align-items: center; /* Vertically centers icon and text */
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    padding: 10px 15px; /* Adjust padding as needed */
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping within the link */
+}
+
+.social-link:hover {
+    background-color: #f0f0f0;
+    color: #007bff; /* Example hover color for text and inherited icon color */
+}
+
+/* Styling for Font Awesome icons (i tags) */
+.social-link i.fab {
+    width: 1.2em; /* Control font icon size */
+    height: 1.2em; /* Ensure consistent sizing */
+    margin-right: 8px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking on smaller screens */
+}
+
+/* Specific icon colors (optional) */
+.fa-linkedin { color: #0A66C2; } /* LinkedIn Blue */
+.fa-github { color: #333; }    /* GitHub Dark */
+.fa-facebook { color: #1877F2; } /* Facebook Blue */
+.fa-kaggle { color: #20BEFF; } /* Kaggle Blue-Green (common brand color) */
+
+
+/* Hover colors for icons */
+.social-link:hover .fa-linkedin { color: #007bff; }
+.social-link:hover .fa-github { color: #007bff; }
+.social-link:hover .fa-facebook { color: #007bff; }
+.social-link:hover .fa-kaggle { color: #007bff; } /* Apply same hover color as others */
+
+/* Blog */
+/* --- Blog Section Styles --- */
+#blog-preview {
+    padding-top: 50px; /* Space above the section content */
+    padding-bottom: 50px; /* Space below the section content */
+}
+
+.blog-intro-text {
+    text-align: left;
+    margin-bottom: 40px; /* Space below the intro text */
+}
+
+.blog-intro-text h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.blog-intro-text p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 960px; /* Constrain paragraph width for readability */
+    margin: 0 auto; /* Center the paragraph if max-width is set */
+    line-height: 1.6;
+}
+
+.blog-posts-grid {
+    display: grid; /* Use CSS Grid for a flexible layout */
+    /* This creates responsive columns: min-width 280px, up to 1fr (equal fraction of space) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between each blog post card */
+    margin-bottom: 40px; /* Space below the grid of cards */
+}
+
+.blog-post-card {
+    background-color: #ffffff; /* White background for each individual card */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    padding: 25px;
+    display: flex; /* Use flexbox for content within the card */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Pushes 'Read More' to the bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow on hover */
+}
+
+.blog-post-card h3 {
+    font-size: 1.5em;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.blog-post-card h3 a {
+    text-decoration: none; /* Remove underline from title links */
+    color: #333; /* Dark text color */
+    transition: color 0.3s ease;
+}
+
+.blog-post-card h3 a:hover {
+    color: #007bff; /* Change color on hover to your primary link color */
+}
+
+.blog-post-card .post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px; /* Space below meta information */
+}
+
+.blog-post-card p {
+    margin-bottom: 20px; /* Space below the excerpt */
+    line-height: 1.5;
+    color: #444;
+}
+
+.blog-post-card .read-more {
+    display: inline-block; /* Make it block-like for padding/margins but inline flow */
+    color: #007bff; /* Primary link color */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto; /* Pushes the 'Read More' link to the bottom if content length varies */
+    transition: color 0.3s ease;
+}
+
+.blog-post-card .read-more:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Blog Page Header */
+.blog-page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 30px; /* Space above the header */
+}
+
+.blog-page-header h2 {
+    font-size: 3em; /* Larger title for the main blog page */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.blog-page-header p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Optional: Pagination Styles --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+    border-color: #bbb;
+}
+
+.page-link.current {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    font-weight: bold;
+    cursor: default;
+}
+
+.page-link.current:hover {
+    background-color: #007bff; /* No change on hover for current page */
+    color: #fff;
+}
+
+.all-posts-link {
+    text-align: center;
+    margin-top: 30px; /* Space above the "View All Posts" button */
+}
+
+/* Ensure your existing button styles are defined in style.css */
+/* .button-primary and .button-secondary */
+
+/* --- Styles for Individual Blog Posts (e.g., /blog/my-post.html) --- */
+#blog-post-content {
+    padding-top: 50px;
+    padding-bottom: 80px; /* More space at the bottom */
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    font-size: 3.5em; /* Larger title for the main post */
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.post-header .post-meta {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: block; /* Ensures image takes full width and new line */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.post-body {
+    font-size: 1.15em; /* Slightly larger text for readability */
+    line-height: 1.8; /* Good line height */
+    color: #333;
+    max-width: 800px; /* Keep content width readable */
+    margin: 0 auto; /* Center the post body */
+}
+
+.post-body h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+    padding-bottom: 10px;
+}
+
+.post-body h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.post-body h4 {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.post-body p {
+    margin-bottom: 1.5em; /* Space between paragraphs */
+}
+
+.post-body ul,
+.post-body ol {
+    margin-bottom: 1.5em;
+    margin-left: 20px; /* Indent lists */
+    padding-left: 0;
+}
+
+.post-body ul li,
+.post-body ol li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
+
+.post-body a {
+    color: #007bff; /* Link color within post body */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-body a:hover {
+    color: #0056b3;
+}
+
+/* For code blocks (if you use them) */
+.post-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    overflow-x: auto; /* Enable horizontal scrolling for long lines */
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.post-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+/* For inline code */
+.post-body p code {
+    background-color: #e9e9e9;
+    padding: 2px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.post-navigation {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee; /* Separator above navigation links */
+}
+
+.post-navigation .button-secondary {
+    margin: 0 10px;
+}
+
+/* Ensure .constrain style is defined for centering the content */
+/* .constrain {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+} */
+/* --- Projects Page General Styles --- */
+#projects-page-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.page-header h2 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Project Category Styles --- */
+.project-category {
+    margin-bottom: 60px; /* Space between different categories */
+    border-bottom: 1px solid #eee; /* Optional: A subtle separator between categories */
+    padding-bottom: 40px;
+}
+
+.project-category:last-child {
+    border-bottom: none; /* No border for the last category */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-category h3 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* Center category titles */
+}
+
+.project-category .category-description {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* --- Individual Project Card Styles (reusing grid concepts from blog) --- */
+.projects-grid {
+    display: grid;
+    /* Adapts to 1 or 2 columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between project cards */
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h4 { /* Changed from h3 to h4 for hierarchical correctness */
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.project-card h4 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.project-card h4 a:hover {
+    color: #007bff; /* Primary link color */
+}
+
+.project-card .project-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.project-links {
+    margin-top: auto; /* Pushes links to the bottom */
+    display: flex;
+    gap: 10px; /* Space between links */
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
+}
+
+.project-link {
+    display: inline-flex; /* Allows icon and text to sit together */
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-link i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.project-body ul li:last-child {
+  margin-bottom: 1.5em; /* Adjust this value as needed for more or less space */
+  line-height: 1.6;
+}
+
+/* Target ordered lists that are nested inside list items */
+.project-body ul li ol {
+    margin-top: 0.5em; /* Adjust this value as needed for more or less space */
+    margin-bottom: 0.5em; /* Optional: adds some space after the ordered list as well */
+}
+
+.button-github {
+    background-color: #24292e;
+    color: #fff;
+    border: 1px solid #24292e;
+}
+
+.button-github:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+.button-demo { /* If you want a separate button for live demos */
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+
+.button-demo:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+/* In your /assets/css/style.css */
+
+/* Target the specific link within your 'whatisml' section */
+#whatisml h2 a {
+    color: #333; /* Dark gray, or a color that matches your site's heading style */
+    text-decoration: underline; /* Make sure this is also set to none */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#whatisml h2 a:hover {
+    color: #007bff; /* A blue color, or your site's primary accent color */
+    /* text-decoration: underline; */ /* Only add this if you want an underline on hover */
+}
+
+
+
+/* Target links specifically within paragraphs in the 'whatisml' section */
+#whatisml p a {
+    color: #007bff; /* A distinct accent color, e.g., a vibrant blue */
+    font-weight: bold; /* Make the text bold to emphasize it */
+    text-decoration: none; /* Remove the default underline */
+    border-bottom: none; /* Add a subtle, colored underline effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the Kaggle link */
+#whatisml p a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    background-color: rgba(0, 123, 255, 0.1); /* Very light highlight on hover */
+    border-color: #0056b3; /* Darker border on hover */
+    text-decoration: none; /* Ensure no default underline pops up */
+}
+
+/* Focus effect for accessibility (keyboard navigation) */
+#whatisml p a:focus {
+    outline: 2px solid #007bff; /* Clear outline for keyboard users */
+    outline-offset: 2px;
+}
+ 
+#whatisml h3 {
+    font-size: 2em; /* Keep your existing font size */
+    margin-bottom: 15px; /* Keep your existing margin */
+    text-align: left; /* Keep your existing alignment */
+    text-decoration: none; /* <--- ADD THIS LINE HERE! */
+}
+/* media query for mobile */
+
+/* Custom styles for the file tree icons */
+.folder-icon::before {
+    content: "📁 "; /* Folder emoji */
+}
+.file-icon::before {
+    content: "📄 "; /* Document emoji */
+}
+.node-modules-icon::before {
+    content: "📦 "; /* Package box emoji */
+}
+
+/* Optional: Basic styling for the project structure to match your site's text */
+.project-structure-container {
+    padding: 1.5rem; /* Equivalent to p-6 or p-8 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-xl */
+    background-color: #ffffff; /* Equivalent to bg-white */
+    max-width: 40rem; /* Equivalent to max-w-md, adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem; /* Add some top margin */
+    margin-bottom: 1.5rem; /* Add some bottom margin */
+    font-family: inherit; /* Inherit font from body */
+    color: #4a5568; /* Equivalent to text-gray-700 */
+}
+
+.project-structure-container h1 {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #2d3748; /* Equivalent to text-gray-800 */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    text-align: center;
+}
+
+.project-structure-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem; /* space-y-2 equivalent */
+}
+
+.project-structure-item.level-0 {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+}
+
+.project-structure-item.level-1 {
+    margin-left: 1.5rem; /* ml-6 */
+    font-size: 1rem; /* text-base */
+}
+
+.project-structure-item.level-2 {
+    margin-left: 3rem; /* ml-6 + ml-6 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.project-structure-icon {
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+.folder-icon {
+    color: #3b82f6; /* text-blue-500 */
+}
+
+.node-modules-icon {
+    color: #ca8a04; /* text-yellow-600 */
+}
+
+.file-icon {
+    color: #4a5568; /* text-gray-600 */
+}
+
+
+/* --- Call to Action (CTA) Section --- */
+.about-me-cta {
+    text-align: center; /* Center the content within this section */
+    margin-top: 40px; /* Space above the CTA */
+    margin-bottom: 60px; /* Space below the CTA */
+    padding: 20px;
+}
+
+.about-me-cta p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 25px; /* Space between the text and the button */
+    max-width: 700px; /* Keep paragraph readable */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+
+pre {
+    background-color: #eef; /* Light blue background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-left: 5px solid #4CAF50; /* Green left border for emphasis */
+    padding: 15px 15px 15px 5px; /* Example: 5px padding on the left */
+    margin: 20px 0;
+    overflow-x: auto; /* Adds horizontal scroll for long lines */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+pre code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    /* min-size, preferred-size (based on viewport), max-size */
+    font-size: (0.8rem, 1.8vw, 1.2rem);  /* Example values */
+    line-height: 1.6;
+    color: #333;
+    display: block;
+    overflow-x: auto;
+}
+
+/* Styling for inline code */
+code {
+    background-color: #f0f0f0; /* Lighter background for inline code */
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.75em;
+    color: #c7254e; /* A distinct color for inline code */
+}
+
+@media (max-width: 767px)  {
+  .product {
+    display: block;  
+    padding: 30px 0px;
+  }
+
+  .product:first-child {
+    padding-top: 0;
+  }
+  .product h1, .content h1 {
+    font-size: 34px;
+  }
+  .product h2, .content h2 {
+    font-size: 16px;
+  }
+  .product p, .content p  {
+    font-size: 16px;
+  }
+}

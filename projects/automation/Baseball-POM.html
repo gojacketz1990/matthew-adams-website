@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Adams | Custom Page Object Model</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <base href="/matthew-adams-website/"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header class="header">
+      <div class="constrain">
+        <h1>
+        <a href=""> Matthew Adams </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="projects/machine-learning/">Machine Learning</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </header>
+    <hr>
+<section class="constrain" id="project-detail-content">
+        <article class="project-case-study">
+            <header class="project-header">
+                <h1>Selenium & Python Page Object Model (POM)</h1>
+                <p class="project-summary-meta">
+                    **Category:** Web Automation Framework | **Tools Used:** Selenium WebDriver, Python, PyTest, Allure, GitHub, Jenkins
+                </p>
+                <p>**Duration:** 8 Months</p>
+                </header>
+
+            <div class="project-body">
+                <h2>Project Overview</h2>
+                <p>This custom Selenium/Python Page Object Model begun while working at Warner Brothers Discovery when I was given the responsibility of automating several legacy projects and new projects that came down the pipeline.  The solution was to design and implement a robust and scalable test automation framework using Selenium, Python, Pytest and Allure for reporting.</p>
+
+                <p>This is a custom Page Object Model Framework built in Selenium/Python that is set up to quickly integrate with new projects. The chosen project is a custom REACT/MERN Stack project that I created to categorize and organize trading cards.</p>
+                  
+                <p>The primary goal was to create a maintainable and reusable suite for any web platform's critical user journeys, centered around the Page Object Model (POM) design pattern to separate test logic from UI locators.  This framework needed to be simple to understand, fully documented and ready to implement as resources became available.</p>
+
+
+                <p>Note:   This project was implemented without using Machine Learning and has proven to be successful.   The next steps are to implement machine learning algorithms on the data. </p>
+                <h2>Key Challenges</h2>
+                <p>Before implementing the framework, there were challenges to be faced:</p>
+                <ul>
+                    <li>**Maintainability:** UI changes often broke tests, as locators were hardcoded within test scripts.</li>
+                    <li>**Code Duplication:** Common actions and helper methods were replicated across multiple files.</li>
+                    <li>**Readability:** Scripts were difficult to read and understand, blending test logic with page interactions.</li>
+                    <li>**Inconsistency:** There are many inconsistencies in how users were implementing methods across various projects.   This made it very difficult to hand projects off or have a new user maintain a project.  </li>
+                </ul>
+
+                <h2>My Approach & Design</h2>
+                <p>I built the framework from the ground up, with Pytest as the test runner due to its simplicity and powerful features like fixtures. The core of the framework is the Page Object Model, which provides a clean and structured way to manage test code.</p>
+                
+                <h3>Page Object Model Implementation:</h3>
+                <p>Each distinct web page or major component (e.g., login page, checkout page, header) of the application was represented by a separate Python class. This class contained:</p>
+                <ul>
+                    <li><strong>Web Elements:</strong> A list of locators for a specific page are housed in a class under the pages folder (e.g. card_catalog_home_locators.py).  The locators are in a form of a list of tuples.  For example: </li>
+                    <pre><code>
+                  username_locator = [
+                    ("name", "user-name"),
+                    ("id", "user-name"),
+                    ]
+                    </code></pre>
+                    <p>
+                        By placing all the locators in a dictionary, we centralize our element references. This ensures that if the ID for the "search_input" ever changes, we only need to update it in this one file, rather than searching through every test case that uses it.  In addition, by adding multiple locators there is some "self healing" build into the locators or maybe a better word is redundancy.  The locator has the find by method and the attribute.
+                    </p>
+                    <p>
+                        In BasePage.py there is a class BasePage which has a Locator Dictionary:
+                    </p>
+                    <pre><code>
+                  LOCATOR_DICT = {
+                      "id": By.ID,
+                      "name": By.NAME,
+                      "xpath": By.XPATH,
+                      "css": By.CSS_SELECTOR,
+                      "class_name": By.CLASS_NAME,
+                      "link_text": By.LINK_TEXT,
+                      "partial_link_text": By.PARTIAL_LINK_TEXT,
+                      "tag_name": By.TAG_NAME,
+                      }
+                    </code></pre>
+                    <p>To get an element on the page, get_element(locators) is called which calls an internal _get_by_method to determine the locator_type to use from the LOCATOR_DICT, LOCATOR_DICT(locator_type) is returned. get_element will loop through the list of tuple locators until it finds the element and if found will return the element or return an error if the element is not found.  get_element: </p>
+                    <pre><code>
+                  def get_element(self, locators):
+                    """Find a single web element using self-healing locators."""
+                      wait = WebDriverWait(self.driver,10)
+                      for locator_type, locator_value in locators:
+                          try:
+                              by_method = self._get_by_method(locator_type)
+                              element = wait.until(EC.presence_of_element_located((by_method, locator_value)))
+                              #print(f"Element found using locator: {locator_type}={locator_value}")
+                              return element
+                          except (NoSuchElementException, TimeoutException):
+                              print(f"Locator failed: {locator_type}={locator_value}")
+                              continue
+
+                      raise NoSuchElementException(f"Element not found using any of the provided locators: {locators}")
+                    </code></pre>
+                    <p>which calls _get_by_method:</p>
+                    <pre><code>
+                  def _get_by_method(self, locator_type):
+                      """Retrieve the Selenium By method for a given locator type."""
+                      if locator_type not in self.LOCATOR_DICT:
+                          raise ValueError(f"Invalid locator type: {locator_type}. Valid types: {list(self.LOCATOR_DICT.keys())}")
+                      return self.LOCATOR_DICT[locator_type]
+                    </code></pre>
+                    <p>And the element is returned.</p>
+
+                    <p>This approach offers several key benefits:</p>
+                    <ul>
+                        <li><strong>Centralized Maintenance:</strong> All locators are in one place for a specific page, making updates simple and fast.  The locators have been removed from the individual page classes and put into their own locator class to reduce noise.</li>
+                        <li><strong>Improved Readability:</strong> Test scripts can refer to elements by logical names like "search_input" instead of verbose `(By.ID, "searchInput")`.</li>
+                        <li><strong>Reduced Duplication:</strong> The same locators are not repeated across multiple test files.   Shared locators such as Header Navigation locators are in their own file and shared across the other pages.</li>
+                    </ul>
+                <li><strong>BasePage:</strong> This is the parent page for all other page objects and shared reusable components.  This class holds common functionality and WebDriver interaction shared across all pages which promotes code reusability, reduces duplication and makes the framework more robust and eariser to maintain.  Contents:
+                <ol>
+                  <li>WebDriver Initialization</li>
+                  <li>Generic and Custom WebDriver Interaction Methods</li>
+                  <li>Common Waiting Mechanisms</li>
+                  <li>Utility Methods</li>
+                  <li>Basic Navigation</li>
+                </ol></li>
+                <li><strong>Individual Page:</strong> Each page file represents a single, distinct web page or reusable component of a web page.  The page contains all of the actions that a user will perform on that individual page.  No actions are performed directly from the individual page class but by shared methods in the BasePage class.</li>
+                </ul>
+                <p>This approach ensured that if a UI element's locator changed, only one file (the Page Object) needed to be updated, not every single test script that used it.</p>
+                <h3>Documentation</h3>
+                <p>In the documentation section, there are eight files:</p>
+                 <ol>
+                    <li><strong>HeaderNavigation.md</strong> - Explains how the header navigation works for shared links.</li>
+                    <li><strong>LocatorExplanation.md</strong> - Explains the locator setup and usage (as above).</li>
+                    <li><strong>method_usage.md</strong> - Explains the shared methods in the BasePage class and their usage.</li>
+                    <li><strong>PageObjectModelSetup.md</strong> - Explains the Page Object Model Setup used for the framework.</li>
+                    <li><strong>parserOptions.md</strong> - Explains the command line arguments that can be used during runtime.</li>
+                    <li><strong>Reporting.md</strong> - Explains the reporting models that are set up and how to use them (PyTest/Allure).</li>
+                    <li><strong>setup.md</strong> - Explains how to start from scratch, clone the repository, create virtual environment, create and activate the virtual environment, install the required packages and usage of Pytest to run the tests.</li>
+                    <li><strong>requirements.txt</strong> - requirements to duplicate the virtual environment to run the test suite.</li>
+                </ol>
+                <h3>Framework Features:</h3>
+                <ul>
+                    <li>**Pytest Fixtures:** Used to manage browser instances and other setup/teardown logic efficiently.</li>
+                    <li>**Report Configurations:** In conftest.py, the pytest_runtest_makereport method configures the output to show the description of each test in the pytest report.  This is called automatically when you run tests with pytest since it is recognized as a hook name and gets called after a test has finished but before the final report is generated.</li>
+                    <li>**Configuration Management:** A centralized `config.ini` file to handle environment-specific data like URLs, usernames, and passwords.</li>
+                    <li>**Test Data Handling:** Utilized CSV files to enable data-driven testing for scenarios like form validation and user logins.</li>
+                    <li>**Reusable Utilities:** Created a separate `utils` module for common tasks like taking screenshots, logging and encoding and unencoding base64 passwords.</li>
+                </ul>
+
+                <h2>Results & Impact</h2>
+                <ul>
+                    <li>**Enhanced Maintainability:** The POM design reduced the effort required for test suite maintenance by approximately <strong>70%</strong>.</li>
+                    <li>**Transportability:** The out of the box framework integrates into new projects seamlessly.  With some knowledge of what is coming, tests can be written and ready for each module when the code becomes available by creating placeholder locators and filling in the details when the code is available.  This reduced the effort required for test suite setup by approximately <strong>75%</strong>.</li>
+                    <li>**Improved Code Readability:** Test scripts became concise and easy to understand, reading almost like plain English.</li>
+                    <li>**Increased Reliability:** The use of explicit waits and a stable framework structure led to more consistent and reliable test runs.</li>
+                    <li>**Reliability:** This framework has been proven to be extremely effective when implemented into web based projects.</li>
+                </ul>
+
+
+                </div>
+
+                <p class="project-github-link">
+                    <a href="https://github.com/gojacketz1990/BaseBallCardProject" target="_blank" class="button button-github"><i class="fab fa-github"></i> View Project on GitHub</a>
+                </p>
+
+            </div>
+
+            <div class="post-navigation">
+                <a href="projects" class="button-secondary">&larr; Back to All Projects</a>
+            </div>
+        </article>
+    </section>
+
+    <hr>
+    <footer class="footer">
+      <div class="constrain">
+        Matthew Adams &copy; 2025
+      </div>
+    </footer>
+    <section class="cookies-banner">
+      <div class="constrain">
+        <div class="cookies-banner-text">
+          <h1>This Website Uses Cookies</h1>
+          <p>This is a really annoying and pointless Cookies banner.</p>
+        </div>
+        <div class="cookies-banner-button">
+            <a href='#' class='button button-orange'>Close</a>
+        </div>
+      </div>
+    </section>
+    <script src='assets/js/global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
