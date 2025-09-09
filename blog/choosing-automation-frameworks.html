@@ -66,7 +66,55 @@ Let's break down some of the most popular automation frameworks, including the w
                     <li><strong>Increased File Count:</strong> A large number of pages means a large number of page object classes, which can clutter the project structure\.</li>
                 </ul>
 
+                <h2>Data Driven Frameworks</h2>
+                <p>A data-driven framework separates test data from the test script itself. The test data is stored in an external source like a spreadsheet, a CSV file, a database, or a JSON file. Test scripts read this data and iterate through it, running the same test logic with different input values.</p>
+                <h3>Pros:</h3>               
+                <ul>
+                    <li><strong>Maintainability:</strong> This is POM's biggest strength. If a UI element changes (e.g., a button's ID is updated), you only need to change it in one place—the corresponding page object class—rather than searching through every test script that uses it.</li>
+                    <li><strong>Code Reusability:</strong> Methods written in a page object can be reused across multiple test cases, reducing code duplication.</li>
+                    <li><strong>Readability:</strong> Test scripts become much cleaner and easier to read. Instead of a series of findElement and click commands, you can write expressive, business-logic-oriented steps like loginPage.login("user", "pass").</li>
+                    <li><strong>Separation of Concerns: </strong> It cleanly separates the test logic (what is being tested) from the page's UI elements and actions (how it's being tested).   </li>
+                </ul>
+                <h3>Cons:</h3>               
+                <ul>
+                    <li><strong>Initial Setup Time:</strong> Creating a page object for every single page can be time-consuming, especially for large applications.</li>
+                    <li><strong>Complexity for Simple Projects:</strong> For very small applications with only a few pages, the overhead of setting up POM might seem unnecessary and can feel like over-engineering.</li>
+                    <li><strong>Increased File Count:</strong> A large number of pages means a large number of page object classes, which can clutter the project structure\.</li>
+                </ul>
                 
+                <h2>Keyword-Driven Framework</h2>
+                <p>In this framework, test scripts are written using a set of keywords. Testers don't need to know the underlying programming language. Instead, they use keywords like "Login," "ClickButton," or "VerifyTitle" in an external file (e.g., a spreadsheet) to define test steps. The framework then executes these steps by mapping the keywords to the corresponding functions in the code.</p>
+                <h3>Pros:</h3>               
+                <ul>
+                    <li><strong>Maintainability:</strong> This is POM's biggest strength. If a UI element changes (e.g., a button's ID is updated), you only need to change it in one place—the corresponding page object class—rather than searching through every test script that uses it.</li>
+                    <li><strong>Code Reusability:</strong> Methods written in a page object can be reused across multiple test cases, reducing code duplication.</li>
+                    <li><strong>Readability:</strong> Test scripts become much cleaner and easier to read. Instead of a series of findElement and click commands, you can write expressive, business-logic-oriented steps like loginPage.login("user", "pass").</li>
+                    <li><strong>Separation of Concerns: </strong> It cleanly separates the test logic (what is being tested) from the page's UI elements and actions (how it's being tested).   </li>
+                </ul>
+                <h3>Cons:</h3>               
+                <ul>
+                    <li><strong>Initial Setup Time:</strong> Creating a page object for every single page can be time-consuming, especially for large applications.</li>
+                    <li><strong>Complexity for Simple Projects:</strong> For very small applications with only a few pages, the overhead of setting up POM might seem unnecessary and can feel like over-engineering.</li>
+                    <li><strong>Increased File Count:</strong> A large number of pages means a large number of page object classes, which can clutter the project structure\.</li>
+                </ul>
+
+                <h2>Hybrid Framework</h2>
+                <p>As the name suggests, a hybrid framework is a combination of two or more of the frameworks listed above. It leverages the strengths of each model to create a more robust and flexible solution. A common hybrid approach is to combine the Page Object Model (for maintainability) with a Data-Driven approach (for efficient data management).</p>
+                <h3>Pros:</h3>               
+                <ul>
+                    <li><strong>Maintainability:</strong> This is POM's biggest strength. If a UI element changes (e.g., a button's ID is updated), you only need to change it in one place—the corresponding page object class—rather than searching through every test script that uses it.</li>
+                    <li><strong>Code Reusability:</strong> Methods written in a page object can be reused across multiple test cases, reducing code duplication.</li>
+                    <li><strong>Readability:</strong> Test scripts become much cleaner and easier to read. Instead of a series of findElement and click commands, you can write expressive, business-logic-oriented steps like loginPage.login("user", "pass").</li>
+                    <li><strong>Separation of Concerns: </strong> It cleanly separates the test logic (what is being tested) from the page's UI elements and actions (how it's being tested).   </li>
+                </ul>
+                <h3>Cons:</h3>               
+                <ul>
+                    <li><strong>Initial Setup Time:</strong> Creating a page object for every single page can be time-consuming, especially for large applications.</li>
+                    <li><strong>Complexity for Simple Projects:</strong> For very small applications with only a few pages, the overhead of setting up POM might seem unnecessary and can feel like over-engineering.</li>
+                    <li><strong>Increased File Count:</strong> A large number of pages means a large number of page object classes, which can clutter the project structure\.</li>
+                </ul>
+
+
                 <h4>Conclusion</h4>
                 <p>It's important to remember that Machine Learning in QA is an enabler, not a replacement. Human QA professionals are still essential for critical thinking, exploratory testing, understanding user empathy, and making nuanced quality judgments. Machine Learning frees up testers from repetitive, data-intensive tasks, allowing them to focus on higher-value activities. Ultimately, AI stands as an incredibly powerful ally for QA professionals, and by efficiently harnessing its capabilities, the future of quality assurance will be marked by unprecedented efficiency in finding and preventing issues. AI's role is not to supplant manual testing, but to augment, refine, and elaborate on human expertise. </p>
 
