@@ -75,69 +75,6 @@ Rather than testing at the end of the pipeline, shift-left pushes testing “lef
                 <p>As organizations face mounting pressure to deliver faster without sacrificing quality, shift-left testing becomes not just an efficiency strategy — but a survival one.</p>
 
 
-                <ul>
-                    <li><strong>Maintainability:</strong> This is POM's biggest strength. If a UI element changes (e.g., a button's ID is updated), you only need to change it in one place—the corresponding page object class—rather than searching through every test script that uses it.</li>
-                    <li><strong>Code Reusability:</strong> Methods written in a page object can be reused across multiple test cases, reducing code duplication.</li>
-                    <li><strong>Readability:</strong> Test scripts become much cleaner and easier to read. Instead of a series of findElement and click commands, you can write expressive, business-logic-oriented steps like loginPage.login("user", "pass").</li>
-                    <li><strong>Separation of Concerns: </strong> It cleanly separates the test logic (what is being tested) from the page's UI elements and actions (how it's being tested).   </li>
-                </ul>
-                <h3>Cons:</h3>               
-                <ul>
-                    <li><strong>Initial Setup Time:</strong> Creating a page object for every single page can be time-consuming, especially for large applications.</li>
-                    <li><strong>Complexity for Simple Projects:</strong> For very small applications with only a few pages, the overhead of setting up POM might seem unnecessary and can feel like over-engineering.</li>
-                    <li><strong>Increased File Count:</strong> A large number of pages means a large number of page object classes, which can clutter the project structure\.</li>
-                </ul>
-
-                <h2>Data Driven Frameworks</h2>
-                <p>A data-driven framework separates test data from the test script itself. The test data is stored in an external source like a spreadsheet, a CSV file, a database, or a JSON file. Test scripts read this data and iterate through it, running the same test logic with different input values.</p>
-                <h3>Pros:</h3>               
-                <ul>
-                    <li><strong>Test Data Centralization:</strong> Test data is stored in one place, making it easy to manage and update without modifying the code.</li>
-                    <li><strong>Efficient Testing:</strong> It's incredibly efficient for running the same test case with multiple sets of data, such as testing a login form with various valid and invalid credentials.</li>
-                    <li><strong>Code Independence:</strong> Test scripts become much cleaner and easier to read. Instead of a series of findElement and click commands, you can write expressive, business-logic-oriented steps like loginPage.login("user", "pass").</li>
-                </ul>
-
-                <h3>Cons:</h3>               
-                <ul>
-                    <li><strong>Initial Setup Complexity:</strong> The initial setup requires designing a robust system to read and parse the external data source, which can be complex.</li>
-                    <li><strong>Data Management:</strong> As the number of test cases and data sets grows, managing the external data files can become unwieldy.</li>
-
-                </ul>
-
-                <h2>Keyword-Driven Framework</h2>
-                <p>In this framework, test scripts are written using a set of keywords. Testers don't need to know the underlying programming language. Instead, they use keywords like "Login," "ClickButton," or "VerifyTitle" in an external file (e.g., a spreadsheet) to define test steps. The framework then executes these steps by mapping the keywords to the corresponding functions in the code.</p>
-                <h3>Pros:</h3>               
-                <ul>
-                    <li><strong>Non-Technical User Involvement:</strong> Testers and even business analysts who are not developers can easily create and maintain test cases.</li>
-                    <li><strong>Reusability:</strong> Keywords are highly reusable across multiple test cases.</li>
-                    <li><strong>Clear Test Steps:</strong> The test cases are written in a more human-readable format.</li>
-                </ul>
-                <h3>Cons:</h3>               
-                <ul>
-                    <li><strong>High Initial Investment:</strong> Building the keyword interpreter and all the necessary functions is a significant upfront effort.</li>
-                    <li><strong>Lack of Flexibility:</strong> It can be difficult to handle complex scenarios or conditional logic that are not covered by the defined keywords.</li>
-                    <li><strong>Increased Complexity:</strong> The framework itself is more complex to build and maintain than other, simpler approaches.</li>
-                </ul>
-                <h2>Hybrid Framework</h2>
-                <p>As the name suggests, a hybrid framework is a combination of two or more of the frameworks listed above. It leverages the strengths of each model to create a more robust and flexible solution. A common hybrid approach is to combine the Page Object Model (for maintainability) with a Data-Driven approach (for efficient data management).</p>
-                <h3>Pros:</h3>               
-                <ul>
-                    <li><strong>Best of Both Worlds:</strong> You get the reusability and maintainability of POM along with the data management efficiency of a data-driven framework.</li>
-                    <li><strong>Flexibility and Customization:</strong> It can be tailored to the specific needs of your project, allowing you to design a framework that perfectly fits your workflow.</li>
-                </ul>
-                <h3>Cons:</h3>               
-                <ul>
-                    <li><strong>Increased Complexity:</strong> The biggest drawback is that a hybrid framework can be more complex to design and implement than a single, simple framework.</li>
-                    <li><strong>Requires Advanced Skills:</strong>  It often requires an experienced automation engineer to design and maintain the framework effectively.</li>
-                </ul>
-
-
-                <h4>Conclusion</h4>
-                <p>The right framework for you depends on your project's size, your team's skillset, and the level of complexity you need to manage. For most projects, starting with a Page Object Model is an excellent choice due to its strong focus on maintainability and readability. If your project has a lot of scenarios that require different data, a hybrid framework combining POM with a data-driven approach is often the ideal solution.</p>
-                <p></p>No matter which you choose, the goal remains the same: to create a test suite that is reliable, scalable, and easy for your team to use and maintain.</p>
-
-
-
                 </div>
             <div class="post-navigation">
                 <a href="blog/" class="button-secondary">&larr; Back to All Posts</a>
