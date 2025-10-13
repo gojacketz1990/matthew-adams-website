@@ -50,7 +50,15 @@
 Rather than testing at the end of the pipeline, shift-left pushes testing “left” — toward the start of development — making QA an equal partner in design, requirements, and implementation.</p>
                 <h3>What is Shift-Left Testing </h3>
 
-                <p>The Page Object Model is arguably the most common and recommended design pattern for test automation. Its core principle is to create a separate class for each web page (or a major component of a page) in your application. This class contains all the web elements (locators) and the methods that interact with them.</p>
+                <p>At its core, Shift-Left Testing means bringing testing activities earlier into the SDLC. Traditionally, QA operated as the final gatekeeper — validating functionality after code integration or deployment (“shift-right”). But this model often meant defects surfaced too late, when they were expensive and time-consuming to fix.</p>
+                
+                <p>Shift-Left reverses that by</p>
+                <ul>
+                    <li><strong>Early test design:</strong>Testers review requirements and acceptance criteria alongside developers.</li>
+                    <li><strong>Automated unit and integration testing:</strong> Quality checks happen with every commit.</li>
+                    <li><strong>Continuous feedback loops: </strong>Teams detect and resolve issues in near real-time.  </li>
+                </ul>
+                
                 <h3>Pros:</h3>               
                 <ul>
                     <li><strong>Maintainability:</strong> This is POM's biggest strength. If a UI element changes (e.g., a button's ID is updated), you only need to change it in one place—the corresponding page object class—rather than searching through every test script that uses it.</li>
