@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthew Adams | Projects</title>
-    <meta name="description" content="Explore my Quality Assurance and test automation projects, categorized by technologies like Selenium, Playwright, Postman, and more.">
-
+    <title>Matthew Adams</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Corrected CSS link: removed leading slash -->
     <base href="/matthew-adams-website/"> 
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tailwind CSS CDN - IMPORTANT for the grid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" xintegrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- base href="/matthew-adams-website/">  -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
       <div class="constrain">
         <h1>
-        <a href=""> Matthew Adams </a>
+        <a href="./"> Matthew Adams </a>
         </h1>
         <nav>
           <ul>
-            <!-- Corrected links: removed leading slash -->
             <li><a href="">Home</a></li>
             <li><a href="socials.html">Socials</a></li>
             <li><a href="blog/">Blog</a></li>
@@ -30,16 +30,14 @@
             <li><a href="projects/machine-learning/">Machine Learning</a></li>
             <li><a href="golf/">Golf Journey</a></li>
             <li><a href="about.html">About</a></li>
+          </ul>
         </nav>
       </div>
 
     </header>
     <hr>
 
-    <section class="constrain" id="projects-page-content">
-        <div class="page-header">
-            <h2>Matthew's Projects & Case Studies</h2>
-            <p>A showcase of my work in Quality Assurance and test engineering, demonstrating practical application of various tools and methodologies.</p>
+      <p>A showcase of my work in Quality Assurance and test engineering, demonstrating practical application of various tools and methodologies.</p>
         </div>
 
         <div class="project-category">
@@ -47,101 +45,73 @@
             <p class="category-description">Projects leveraging Selenium, Python, PyTest and my custom Page Object Model Framework.</p>
             <div class="projects-grid">
                 <article class="project-card">
-                    <h4><a href="projects/automation/Baseball-POM.html">Page Object Model Custom Framework</a></h4>
+                    <h4><a href="projects/automation/globalSQA-POM.html">Page Object Model Custom Framework</a></h4>
                     <p class="project-meta">Tools: Selenium WebDriver, Python, PyTest, Allure, GitHub, Jenkins</p>
-                    <p>This is a custom Page Object Model Framework built in Selenium/Python that is set up to quickly integrate with new projects.   The chosen project is a custom REACT/MERN Stack project that I created to categorize and organize trading cards.
+                    <p>This is a custom Page Object Model Framework that I am enhancing currently to handle any and all web elements that I can find.  GlobalSQA has a demo web site that is built for just this purpose.  It is a practice website and has a vast amount of web components on the DemoSite page and also has a site with AngularJS components that I will build into the framework.  These are all built on my custom Selenium/Python/Pytest Page Object Model framework that I have used and implemented for years.   This is still a work in progress as I continue to go through the web site.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/gojacketz1990/BaseBallCardProject" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/gojacketz1990/globalsqa_pom" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                 </article>
 
             </div>
         </div>
 
-        <div class="project-category">
-            <h3>Python NCAA Basketball Betting Model</h3>
-            <p class="category-description">Showcasing web scraping, pandas, numpy, data manipulation, preprocessing, etc</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h4><a href="projects/automation/NCAAB-Betting-Model.html">NCAA Basketball Betting Model</a></h4>
-                    <p class="project-meta">Tools: Selenium WebDriver, Python, GitHub, Pandas, Web Scraping, Data Science </p>
-                    <p>This project takes statistics from various sources including Kenpom.com, sportsreference.com, and vegasinsider.com to subsequently predict outcomes of NCAA basketball games (sides and totals).   
+    
+     <!-- START: 2x2 Grid Section -->
+    <section class="constrain py-12" id="work-overview">
+        <h2 class="text-3xl text-gray-900 text-center mb-12">What I Have Worked On (and Am Working On)</h2>
 
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/gojacketz1990/ncaabettingmodel" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </article>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Section 1: Automation Testing (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/automation/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/selenium.jpeg" alt="Selenium Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Automation Testing</h2>
+                <p class="text-gray-600">Building robust automation frameworks with Selenium and other tools to ensure software quality and efficiency.</p>
+            </a>
+
+            <!-- Section 2: API Testing Frameworks (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/api-testing/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/postman_icon.png" alt="Postman Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">API Testing Frameworks</h2>
+                <p class="text-gray-600">Developing robust API testing frameworks to ensure the reliability and performance of backend services. </p>
+            </a>
+
+            <!-- Section 3: Performance Testing (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/performance-testing/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/load-runner.png" alt="Loadrunner Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Performance Testing</h2>
+                <p class="text-gray-600">Optimizing application speed and responsiveness to ensure systems can handle expected loads and deliver seamless user experiences under various conditions.</p>
+            </a>
+
+            <!-- Section 4: Machine Learning (Now a clickable link) -->
+            <!-- Corrected image src: removed leading slash -->
+            <a href="projects/machine-learning/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/ai.jpg" alt="AI Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Machine Learning</h2>
+                <p class="text-gray-600">Developing and deploying machine learning models to solve complex problems and drive intelligent solutions.</p>
+            </a>
+
+            <a href="projects/agentic-ai/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/agentic.jpg" alt="Agentic AI Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Agentic AI</h2>
+                <p class="text-gray-600">Building Autonomous AI Agents.</p>
+            </a>
+            <a href="projects/llm-engineering/" class="block bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline text-inherit">
+                <img src="assets/img/llm.jpg" alt="AI Logo" class="h-16 w-16 mb-4">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">LLM Engineering</h2>
+                <p class="text-gray-600">Building and deploying LLM Apps, Generative AI, RAG, LoRA and AI Agents.</p>
+            </a>
         </div>
-        <div class="project-category">
-            <h3>ViTest API Testing Projects</h3>
-            <p class="category-description">Showcasing modern web automation with ViTest for api testing</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h4><a href="projects/api-testing/Vitest-API-Testing.html">API Testing with Vitest</a></h4>
-                    <p class="project-meta">Tools: JavaScript, Vitest, Axios, API Authentication</p>
-                    <p>Implemented end-to-end API testing for custom built REACT/MERN applicatioin.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/gojacketz1990/vitest-api-testing" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </article>
-            </div>
-        </div> 
-        
-        <div class="project-category">
-            <h3>Postman API Testing Projects</h3>
-            <p class="category-description">Examples of API testing and monitoring using Postman collections, pre-request scripts, and Newman for CI/CD integration.</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h4><a href="projects/api-testing/Postman-API-Testing.html">API Testing with Postman</a></h4>
-                    <p class="project-meta">Tools: Postman, Newman, JavaScript (Postman Sandbox)</p>
-                    <p>Developed a comprehensive Postman collection for a baseball card categorization/organization API, including authentication, data validation, and negative testing scenarios.  Implemented end-to-end API testing for a custom built REACT/MERN Application.   Also some deeper dives into creating tests, graphQA and other tidbits.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/postman-financial-api" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="project-category">
-            <h3>REACT Unit Testing</h3>
-            <p class="category-description">Showcasing web scraping, pandas, numpy, data manipulation, preprocessing, etc</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h4><a href="projects/automation/REACT-unit-testing.html">REACT Unit Testing</a></h4>
-                    <p class="project-meta">Tools: Vite, Vitest, JavaScript, React Testing Library.</p>
-                    <p>This project takes statistics from various sources including Kenpom.com, sportsreference.com, and vegasinsider.com to subsequently predict outcomes of NCAA basketball games (sides and totals).   
-
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/gojacketz1990/reactunittesting" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="project-category">
-            <h3>Performance & Load Testing Projects</h3>
-            <p class="category-description">Projects demonstrating expertise in identifying performance bottlenecks, capacity planning, and ensuring application scalability under load.</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h4><a href="projects/performance-project-1.html">Microservice Load Test with JMeter</a></h4>
-                    <p class="project-meta">Tools: JMeter, Grafana, Prometheus, Docker</p>
-                    <p>Designed and executed load tests for a microservices architecture, identifying critical API endpoints and optimizing database query performance.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/jmeter-microservices" target="_blank" class="project-link button-github"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-
     </section>
+    <!-- END: 2x2 Grid Section -->
 
-    <hr>
-    <footer class="footer">
+
+
+    <hr> <footer class="footer">
       <div class="constrain">
         Matthew Adams &copy; 2025
       </div>
@@ -158,6 +128,5 @@
       </div>
     </section>
     <script src='assets/js/global.js'></script>
-
-</body>
+  </body>
 </html>
